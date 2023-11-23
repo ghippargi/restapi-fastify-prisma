@@ -1,0 +1,31 @@
+{
+  "name": "rest-api-fastify-prismo",
+  "version": "0.1.0",
+  "description": "Application that exposes REST API. Used fasify, Prismo and Postgresql to build the APIs.",
+  "main": "main/index.ts",
+  "author": "ghippargi",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/swagger": "^8.12.0",
+    "@fastify/swagger-ui": "^1.10.1",
+    "@prisma/client": "^5.6.0",
+    "fastify": "^4.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.2",
+    "@types/pino": "^7.0.5",
+    "prisma": "^5.6.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "prisma": {
+    "schema": "database/schema.prisma"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "gen": "ts-node ./main/script.ts",
+    "start": "tsc -p tsconfig.json && ts-node ./main/app.ts",
+    "dev": "tsc -p tsconfig.json && ts-node-dev ./main/app.ts"
+  }
+}
